@@ -1,6 +1,6 @@
 /*This module is a 2 flop synchronizer for read pointer using wclk*/
 
-module sync_rptr #(ADDRSIZE = 4)
+module sync_rptr #(parameter ADDRSIZE = 4)
                   (input [ADDRSIZE:0]rptr,
                    input wclk,
                    input wrst,

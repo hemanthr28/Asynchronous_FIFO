@@ -10,7 +10,7 @@ module async_fifo #(parameter DATASIZE = 8,
                      output rempty);
                      
 wire [ADDRSIZE-1:0] waddr, raddr;
-wire [ADDRSIZE:0] rd_wptr, wd_rptrt, rptr, wptr;
+wire [ADDRSIZE:0] rd_wptr, wd_rptr, rptr, wptr;
 
 fifomemory #(DATASIZE, ADDRSIZE) fifomem (.wdata(wdata), .winc(winc), .wfull(wfull), .waddr(waddr), .raddr(raddr), .wclk(wclk), .rdata(rdata));
 wdomain #(ADDRSIZE) wdomain1 (.wclk(wclk), .winc(winc), .wfull(wfull), .waddr(waddr), .wrst(wrst), .wd_rptr(wd_rptr), .wptr(wptr));
